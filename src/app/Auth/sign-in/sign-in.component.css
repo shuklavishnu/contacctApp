@@ -1,0 +1,13 @@
+.container{
+    margin-top: 14%;
+    width: 64vh;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 17px;
+}
+.form-text{
+    position: absolute;
+    top: 19%;
+    left: 45%;
+    font-weight: 500;
+}

@@ -1,0 +1,24 @@
+.col-md-2{
+    height: 99vh;
+    background-color: gray;
+}
+.col-md-10{
+    height: 99vh;
+    background-color: whitesmoke;
+}
+.navigation-container{
+    margin-top:20px;
+}
+.app-title{
+    font-size: x-large;
+    color: white;
+    margin: 10px;
+}
+.app-routes{
+width: 100%;
+}
+.app-routes a{
+    text-decoration: none;
+    color:white;
+    padding-left: 10px;
+}

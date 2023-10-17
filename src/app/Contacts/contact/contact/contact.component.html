@@ -1,0 +1,58 @@
+<div class="select-container">
+    <ng-select  class="custom" id="select" [(ngModel)]="selectedUser"
+    bindLabel="name"
+    [items]="users"></ng-select>
+</div>
+<div class="container-heading">
+    <h2 >Contacts</h2>
+    <div class="button-container">
+        <button class="btn btn-dark">Import</button>
+        <button class="btn btn-dark">Export</button>
+        <button class="btn btn-dark round-button"  (click)="showEditTemplate(editTemplate,null)">+</button>
+    </div>
+</div>
+<div class="contacts-container d-flex">
+    <div class="card m-1" style="width: 14rem;" *ngFor="let item of selectedUser?.user">
+        <img [src]="'https://picsum.photos/214/150'" class="card-img-top" alt="Image Alt Text">
+        <div class="card-body">
+          <p class="card-text"> <b >{{item.name}}</b></p>
+          <p class="card-text"> <b >{{item.phoneNumber}}</b></p>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-primary" (click)="showEditTemplate(editTemplate,item)">Edit</button>
+            <button class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+</div>
+
+<ng-template #editTemplate>
+<div>
+    <p class="m-2">Create new contact</p>
+    <hr>
+    <form [formGroup]="addOrEditForm">
+          <div class="container">
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="form2Example1">Name <span class="text-danger">*</span></label>
+                <input type="text" id="form2Example1"  formControlName="name" class="form-control" />
+              </div>
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example1">Email <span class="text-danger">*</span></label>
+              <input type="text" id="form2Example1" formControlName="email" class="form-control" />
+            </div>
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example2">Phone Number <span class="text-danger">*</span></label>
+              <input type="number" id="form2Example2" formControlName="phoneNumber" class="form-control" />
+            </div>
+              <div class="form-outline mb-4">
+                  <label class="form-label" for="form2Example2">Image <span class="text-danger">*</span></label>
+                <input type="file" id="form2Example2" formControlName="file" class="form-control" />
+              </div> 
+              <hr>
+              <div class="float-right">
+                <button type="button" class="btn btn-secondary btn-block mb-4" (click)="modalRef?.hide()">Discard</button>
+                <button type="button" class="btn btn-secondary btn-block mb-4">Add</button>
+              </div>
+          </div>
+      </form>
+</div>
+</ng-template>

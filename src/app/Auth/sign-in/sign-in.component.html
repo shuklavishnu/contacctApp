@@ -1,0 +1,21 @@
+<form [formGroup]="signinForm">
+  <p class="form-text">Sign in to your account to continue</p>
+    <div class="container">
+        <div class="form-outline mb-4">
+            <label class="form-label" for="form2Example1">Email <span class="text-danger">*</span></label>
+          <input type="email" id="form2Example1" formControlName="email" class="form-control" />
+        </div>
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="form2Example2">Password <span class="text-danger">*</span></label>
+          <input type="password" id="form2Example2" formControlName="password" class="form-control" />
+        </div> 
+        <!-- Submit button -->
+        <button type="button" class="btn btn-primary btn-block mb-4" [disabled]="!signinForm.valid" (click)="signIn()">Sign in</button>
+      
+        <!-- Register buttons -->
+        <div class="text-center">
+          <p>Not a member? <a routerLink="/signup">Create Account</a></p>
+        </div>
+    </div>
+</form>
